@@ -1,0 +1,141 @@
+// Bai Zi Jun 22097967d
+// Zhou Hao Di 22097173d
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Availability</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #b49e5e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .parking-type {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .parking-type select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* SVG Parking lot styling */
+    .svg-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .parking-space {
+      fill: #004d40; /* Default fill is green for available */
+      cursor: pointer;
+    }
+    
+    .parking-space.occupied {
+      fill: red; /* Red for occupied spaces */
+    }
+
+    .parking-space:hover {
+      fill: #a0854f; /* Gold hover effect */
+    }
+
+    .parking-label {
+      font-size: 14px;
+      text-anchor: middle;
+      fill: #333;
+    }
+
+    .parking-space.selected {
+      stroke: #b49e5e;
+      stroke-width: 3;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Parking Space Availability</h2>
+
+    <!-- Parking Type Selection -->
+    <div class="parking-type">
+      <label for="parkingType">Select Parking Type: </label>
+      <select id="parkingType">
+        <option value="user">User Parking</option>
+        <option value="vip">VIP Parking</option>
+      </select></br>
+      <label for="parkingType">Parking price: 100HKD</label>
+    </div>
+
+    <!-- SVG Parking Visual -->
+    <div class="svg-container">
+      <svg width="400" height="400">
+        <!-- Row 1 Parking Spaces -->
+        <g class="parking-space-group">
+          <rect class="parking-space" id="space1" x="50" y="50" width="60" height="100" onclick="toggleSpace('space1')" />
+          <text class="parking-label" x="80" y="120">1</text>
+
+          <rect class="parking-space" id="space2" x="150" y="50" width="60" height="100" onclick="toggleSpace('space2')" />
+          <text class="parking-label" x="180" y="120">2</text>
+
+          <rect class="parking-space" id="space3" x="250" y="50" width="60" height="100" onclick="toggleSpace('space3')" />
+          <text class="parking-label" x="280" y="120">3</text>
+        </g>
+
+        <!-- Row 2 Parking Spaces -->
+        <g class="parking-space-group">
+          <rect class="parking-space" id="space4" x="50" y="200" width="60" height="100" onclick="toggleSpace('space4')" />
+          <text class="parking-label" x="80" y="270">4</text>
+
+          <rect class="parking-space" id="space5" x="150" y="200" width="60" height="100" onclick="toggleSpace('space5')" />
+          <text class="parking-label" x="180" y="270">5</text>
+
+          <rect class="parking-space" id="space6" x="250" y="200" width="60" height="100" onclick="toggleSpace('space6')" />
+          <text class="parking-label" x="280" y="270">6</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="footer">
+      <div class="scroll-up">&#9650;</div>
+      <p>EIE4432 Group Project | Bai Zi Jun Zhou Hao Di</p>
+      <div class="copyright">
+      &copy; 22097967d & 22097173d
+  </div>
+  </div>
+
+</body>
+</html>
